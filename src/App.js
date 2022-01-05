@@ -33,12 +33,15 @@ function App() {
     },
   ];
 
-  // const element = <h2>Let's get started!</h2>;
+  const addExpenseHander = (expense) => {
+    console.log(expense);
+    console.log('App.js');
+  }
 
   return (
     <div>
       {/* {element} */}
-      <NewExpense/>
+      <NewExpense expensePointer={addExpenseHander}/>
       <Expenses item={expenses}/>
     </div>
   );

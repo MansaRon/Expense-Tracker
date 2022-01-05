@@ -4,10 +4,20 @@ import ExpenseForm from "./ExpenseForm";
 
 // function newExpense() {}
 
-const NewExpense = () => {
+const NewExpense = (props) => {
+
+    function SaveExpenseData (enteredData) {
+        // This pulls out all the data from the props and add in a new ID for the object 
+        const expenseData = {
+            ...enteredData,
+            id: Math.random().toString()
+        }
+        props.expensePointer(expenseData);
+    }
+    
     return (
         <div className="new-expense">
-            <ExpenseForm/>
+            <ExpenseForm onSaveData={SaveExpenseData}/>
         </div>
     )
 }
