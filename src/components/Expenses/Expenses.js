@@ -1,8 +1,8 @@
-import react, {useState} from "react";
+import React, {useState} from "react";
 import Card from "../UI/Card";
-import ExpenseItem from "../Expenses/ExpenseItem";
 import './Expenses.css';
 import ExpensesFilter from "./ExpenseFilter";
+import ExpensesList from "./ExpensesList";
 
 const Expenses = (props) => {
 
@@ -17,15 +17,15 @@ const Expenses = (props) => {
         console.log(props.items);
         setFilteredYear(selectedYear);
     }
- 
+
     return (
         <div>
             <Card className="expenses">
                 <ExpensesFilter selectedYear={filteredYear} onChangeFilter={filterChanger}></ExpensesFilter>
             
                 {/* Add keys when mapping out an item on your list */}
-                {filteredExpenses.map((expense, index) =>  <ExpenseItem key={expense.id} title={expense.title} amount={expense.amount} date={expense.date}/> )}
-
+                {/* Conditional listing (Output list depending on a condition) */}
+                <ExpensesList item = {filteredExpenses} />
             </Card>
         </div>
     )
