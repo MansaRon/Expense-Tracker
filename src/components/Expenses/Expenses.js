@@ -13,8 +13,6 @@ const Expenses = (props) => {
     });
 
     const filterChanger = (selectedYear) => {
-        console.log('Expeses.Js');
-        console.log(props.items);
         setFilteredYear(selectedYear);
     }
 
