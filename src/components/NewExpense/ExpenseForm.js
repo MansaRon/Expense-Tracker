@@ -33,7 +33,7 @@ const ExpenseForm = (props) => {
         else {
             const expenseData = {
                 title: enteredTitle,
-                amount: enteredAmount,
+                amount: +enteredAmount,
                 date: new Date(enteredDate)
             }
             // Clears user input
